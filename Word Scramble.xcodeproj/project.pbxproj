@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		6581E1D31B78847B00A995C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581E1D21B78847B00A995C6 /* AppDelegate.swift */; };
 		6581E1D51B78847B00A995C6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581E1D41B78847B00A995C6 /* MasterViewController.swift */; };
-		6581E1D71B78847B00A995C6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581E1D61B78847B00A995C6 /* DetailViewController.swift */; };
 		6581E1DA1B78847B00A995C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6581E1D81B78847B00A995C6 /* Main.storyboard */; };
 		6581E1DC1B78847B00A995C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6581E1DB1B78847B00A995C6 /* Assets.xcassets */; };
 		6581E1DF1B78847B00A995C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6581E1DD1B78847B00A995C6 /* LaunchScreen.storyboard */; };
+		6581E1E71B7885DD00A995C6 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6581E1E61B7885DD00A995C6 /* start.txt */; };
+		6581E1E91B788C8600A995C6 /* Array+Shuffling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581E1E81B788C8600A995C6 /* Array+Shuffling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6581E1CF1B78847B00A995C6 /* Word Scramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Scramble.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6581E1D21B78847B00A995C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6581E1D41B78847B00A995C6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		6581E1D61B78847B00A995C6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6581E1D91B78847B00A995C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6581E1DB1B78847B00A995C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6581E1DE1B78847B00A995C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6581E1E01B78847B00A995C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6581E1E61B7885DD00A995C6 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
+		6581E1E81B788C8600A995C6 /* Array+Shuffling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				6581E1D21B78847B00A995C6 /* AppDelegate.swift */,
 				6581E1D41B78847B00A995C6 /* MasterViewController.swift */,
-				6581E1D61B78847B00A995C6 /* DetailViewController.swift */,
 				6581E1D81B78847B00A995C6 /* Main.storyboard */,
 				6581E1DB1B78847B00A995C6 /* Assets.xcassets */,
 				6581E1DD1B78847B00A995C6 /* LaunchScreen.storyboard */,
 				6581E1E01B78847B00A995C6 /* Info.plist */,
+				6581E1E61B7885DD00A995C6 /* start.txt */,
+				6581E1E81B788C8600A995C6 /* Array+Shuffling.swift */,
 			);
 			path = "Word Scramble";
 			sourceTree = "<group>";
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6581E1DF1B78847B00A995C6 /* LaunchScreen.storyboard in Resources */,
+				6581E1E71B7885DD00A995C6 /* start.txt in Resources */,
 				6581E1DC1B78847B00A995C6 /* Assets.xcassets in Resources */,
 				6581E1DA1B78847B00A995C6 /* Main.storyboard in Resources */,
 			);
@@ -137,9 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6581E1D71B78847B00A995C6 /* DetailViewController.swift in Sources */,
 				6581E1D51B78847B00A995C6 /* MasterViewController.swift in Sources */,
 				6581E1D31B78847B00A995C6 /* AppDelegate.swift in Sources */,
+				6581E1E91B788C8600A995C6 /* Array+Shuffling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
