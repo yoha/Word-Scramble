@@ -19,9 +19,12 @@ class MasterViewController: UITableViewController {
         if let startWordsPath = NSBundle.mainBundle().pathForResource("start", ofType: "txt") {
             do {
                 let startWords =  try NSString(contentsOfFile: startWordsPath, usedEncoding: nil)
-                self.allIndividualWords = startWords.componentsSeparatedByString("\n") ?? ["silkworm"]
+                self.allIndividualWords = startWords.componentsSeparatedByString("\n") ?? self.loadDefaultWords()
             }
-            catch {}
+            catch {
+                print("Your file is mostl likely corrupted")
+                self.allIndividualWords = self.loadDefaultWords()
+            }
         }
         self.startGame()
     }
@@ -54,6 +57,10 @@ class MasterViewController: UITableViewController {
     }
     
     // MARK: - Local Methods
+    
+    func loadDefaultWords() -> [String] {
+        return ["silkworm", "candidate", "conspicuous"]
+    }
     
     func startGame() {
         self.allIndividualWords.shuffle()
