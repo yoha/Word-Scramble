@@ -78,12 +78,17 @@ class MasterViewController: UITableViewController {
         if wordIsASubsetOfMaster(lowercaseAnswer) {
             if wordIsFirstUsed(lowercaseAnswer) {
                 if wordIsValid(lowercaseAnswer) {
-                    self.userAnswers.insert(lowercaseAnswer, atIndex: 0)
-                    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-                    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    if wordIsTooShort(lowercaseAnswer) {
+                        self.userAnswers.insert(lowercaseAnswer, atIndex: 0)
+                        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+                        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    }
+                    else {
+                        self.showErrorMessage("That word is too short", errorMessage: "3 or more characters only!")
+                    }
                 }
                 else {
-                    self.showErrorMessage("Word not recognized.", errorMessage: "Don't try to fool me. :)")
+                    self.showErrorMessage("That word is not recognized.", errorMessage: "Don't try to fool me. :)")
                 }
             }
             else {
@@ -116,6 +121,10 @@ class MasterViewController: UITableViewController {
         let wordRange = NSMakeRange(0, answer.length)
         let misspelledRange = wordChecker.rangeOfMisspelledWordInString(String(answer), range: wordRange, startingAt: 0, wrap: false, language: "en")
         return misspelledRange.location == NSNotFound
+    }
+    
+    func wordIsTooShort(answer: NSString) -> Bool {
+        return answer.length >=  3
     }
     
     func showErrorMessage(errorTitle: String, errorMessage: String) {
