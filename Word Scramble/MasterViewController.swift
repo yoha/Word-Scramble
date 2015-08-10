@@ -78,13 +78,18 @@ class MasterViewController: UITableViewController {
         if wordIsASubsetOfMaster(lowercaseAnswer) {
             if wordIsFirstUsed(lowercaseAnswer) {
                 if wordIsValid(lowercaseAnswer) {
-                    if wordIsTooShort(lowercaseAnswer) {
-                        self.userAnswers.insert(lowercaseAnswer, atIndex: 0)
-                        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-                        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                    if wordIsEqualToTitle(lowercaseAnswer) {
+                        if wordIsTooShort(lowercaseAnswer) {
+                            self.userAnswers.insert(lowercaseAnswer, atIndex: 0)
+                            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+                            self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+                        }
+                        else {
+                            self.showErrorMessage("That word is too short", errorMessage: "3 or more characters only!")
+                        }
                     }
                     else {
-                        self.showErrorMessage("That word is too short", errorMessage: "3 or more characters only!")
+                        self.showErrorMessage("That word is the same as the start word", errorMessage: "Are you lazy?")
                     }
                 }
                 else {
@@ -124,7 +129,12 @@ class MasterViewController: UITableViewController {
     }
     
     func wordIsTooShort(answer: NSString) -> Bool {
+        print(answer.length)
         return answer.length >=  3
+    }
+    
+    func wordIsEqualToTitle(answer: String) -> Bool {
+        return answer != self.title!
     }
     
     func showErrorMessage(errorTitle: String, errorMessage: String) {
