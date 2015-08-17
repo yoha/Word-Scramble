@@ -17,14 +17,16 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "promptForAnswer")
         if let startWordsPath = NSBundle.mainBundle().pathForResource("start", ofType: "txt") {
-            do {
-                let startWords =  try NSString(contentsOfFile: startWordsPath, usedEncoding: nil)
-                self.allIndividualWords = startWords.componentsSeparatedByString("\n") ?? self.loadDefaultWords()
-            }
-            catch {
-                print("Your file is mostl likely corrupted")
-                self.allIndividualWords = self.loadDefaultWords()
-            }
+//            do {
+//                let startWords =  try NSString(contentsOfFile: startWordsPath, usedEncoding: nil)
+//                self.allIndividualWords = startWords.componentsSeparatedByString("\n") ?? self.loadDefaultWords()
+//            }
+//            catch {
+//                print("Your file is most likely corrupted")
+//                self.allIndividualWords = self.loadDefaultWords()
+//            }
+            let startWords = try! NSString(contentsOfFile: startWordsPath, usedEncoding: nil)
+            self.allIndividualWords = startWords.componentsSeparatedByString("\n") ?? self.loadDefaultWords()
         }
         self.startGame()
     }
